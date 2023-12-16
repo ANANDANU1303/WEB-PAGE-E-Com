@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(40, 9, 53);
+            padding: 15px;   
+        }
+        h1{
+            text-align: center;
+            color:white;
+
+        }
+        #evenNumbers {
+            font-size: 25px;
+            
+        }
+        #demo{
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            font-size: 50px;
+            
+        }
+        button{
+       margin-left: 540px;
+       padding: 10px;
+       border-radius: 10px;
+            text-align: center;
+            color: white;
+        background-color: rgb(110, 3, 3);
+        }
+        div{
+          border: 10px dotted rgb(174, 197, 247);
+        }
+    
+    </style>
+</head>
+<div>
+    <h1><u>Even Numbers</u></h1>
+    <button type="button" onclick="even()">PRINT EVEN NUMBERS </button>
+    <br>
+    <br>
+    <label for="number" style="color: white; font-size: 20px;margin-left: 320px;">Type your Even number</label>
+    <input type="number" name="number" id="even" style="height: 45px;">
+    <br>
+    <br>
+
+    <button type="button" onclick="print()">PRINT NUMBERS </button></div>
+    <p id="demo"></p>
+    <script>
+        function even(){
+        let i=0;
+        for (let i = 0; i <= 100; i++) {
+          if (i % 2 == 0)
+        
+        document.getElementById("demo").innerHTML +="<br> " +i+" <br>  "+'Even Number.'+" <br>";
+        }}
+    
+        function print(){
+     let A=Number(document.getElementById("even").value);
+            ans="";
+            for(let i=0; i<=A; i+=1){
+                if(i%2==0){
+                    ans+=i+" , ";
+                }
+            }
+           document.getElementById("demo").innerHTML=ans;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        background-color: rgba(255, 212, 230, 0.721);
+      }
+      h1{
+        text-align: center;
+        color: rgb(6, 2, 54);
+        text-shadow: 3px 1px rgba(0, 0, 0, 0.532);
+        font-weight: bold;
+        text-decoration:  black solid underline;
+      }
+  
+      table{
+        min-width: 600px;
+        display:table;
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: auto;
+        margin-right: auto;
+     
+      }
+      th{
+        border-bottom: 1px solid black;
+      }
+      th,td{ 
+        height: 40px;
+ 
+      }
+     
+      form{
+        display:none;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid black;
+        padding: 20px;
+        background-color: rgb(18, 2, 46);
+        color: white;
+        box-shadow: 8px 8px rgba(0, 0, 0, 0.394) ;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+    #contact tr:nth-child(even){
+      background-color: rgb(34, 2, 41);
+      text-indent: 15px;
+      color: white;
+
+
+      }
+      
+    #contact tr:nth-child(odd){
+      background-color:rgb(2, 4, 41) ;
+      color: white;
+      text-indent: 15px;
+
+      }
+   
+      #contactth{
+      background-color: rgb(2, 30, 66);
+      color: white;
+      
+      }
+  
+      input{
+        text-transform: uppercase;
+        padding: 8px;
+        border-radius: 10px;
+      }
+
+      input:focus{
+        background-color: rgb(202, 247, 212);
+      }
+
+      button#aa{
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 25px;
+        font-weight: bold;
+        
+        background-color: rgb(6, 49, 2);
+        color: white;
+      }
+      
+      button#bb{
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 25px;
+        font-weight: bold;
+        background-color: rgb(53, 1, 1);
+        color: white;
+      }
+
+      button#cc{
+        padding: 10px;
+        border-radius: 8px;
+font-weight: bold;
+        background-color: rgb(95, 0, 0);
+        color: rgb(255, 255, 255);
+      }
+      #aa:hover,#bb:hover,#cc:hover{
+        background-color: gray;
+      }
+      #con-tabel td{
+        text-align: center;
+      }
+      
+    </style>
+</head>
+<body>
+
+ <h1>CONTACT LIST</h1>
+ 
+ 
+
+ <table id="contact">
+    <tr>
+        <th>S.N</th>
+        <th>NAME</th>
+        <th>Mobile Number</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>ANAND</td>
+        <td>8866557788</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>ARUMUGAM</td>
+        <td>6677554433</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>RAMESH</td>
+        <td>9977554422</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>VIGESH</td>
+        <td>9944556656</td>
+    </tr>
+  </table>
+
+ <br> <br>
+
+ <table id="con-tabel">
+  <tr>
+    <td> <button id="aa" onclick="aa()">ADD CONTACT</button></td>
+    <td> <button id="bb" onclick="bb()">REMOVE CONTACT</button></td>
+  </tr>
+ </table>
+
+ <br>
+
+ <form id="addvalue" action="">
+    <input id="a" type="text" placeholder="NAME" required><br><br>
+    <input id="b" type="number" placeholder="NUMBER" required><br><br>
+    <button id="cc" onclick="sub()">SAVE</button>
+ </form>
+
+<script>
+
+  function aa(){
+    document.getElementById("addvalue").style.display="table";
+  }
+ 
+  function sub(){
+    
+    let name=document.getElementById("a").value;
+    let num=document.getElementById("b").value;
+    let cap=name.toUpperCase();
+    cap.trim();
+    
+    if((cap.length==0) || (num.length==0)){
+    }
+
+    else{
+    const top=document.getElementById("contact")
+    const main=document.createElement("tr");
+    const dec=top.getElementsByTagName("tr");
+    let aaa=dec.length; 
+    
+    const c1=document.createElement("td");
+    const c2=document.createElement("td");
+    const c3=document.createElement("td");
+
+    const a1=document.createTextNode(aaa);
+    const a2=document.createTextNode(cap);
+    const a3=document.createTextNode(num);
+
+    top.appendChild(main);
+    
+    main.appendChild(c1);
+    main.appendChild(c2);
+    main.appendChild(c3);
+
+    c1.appendChild(a1);
+    c2.appendChild(a2);
+    c3.appendChild(a3);
+
+      if(aaa%2==0){
+      c1.style.backgroundColor=":rgb(2, 4, 41)";
+      c2.style.backgroundColor="rgb(2, 4, 41)";
+      c3.style.backgroundColor=":rgb(2, 4, 41)";
+      }
+      else{
+        c1.style.backgroundColor="rgb(34, 2, 41)";
+      c2.style.backgroundColor="rgb(34, 2, 41)";
+      c3.style.backgroundColor="rgb(34, 2, 41)";
+
+      }
+
+
+    
+
+    document.getElementById("addvalue").style.display="none";
+    document.getElementById("a").value=null;
+    document.getElementById("b").value=null;
+    }
+  }
+
+  function bb(){
+    const tot=document.getElementById("contact");
+    const dec=tot.getElementsByTagName("tr");
+    const x=dec[dec.length-1];
+
+    if(1<dec.length){
+        x.remove();
+    }
+  }
+
+</script>
+</body>
+</html>

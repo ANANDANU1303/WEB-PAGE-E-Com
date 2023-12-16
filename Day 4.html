@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <title>
+
+     </title>
+     <style>
+        body{
+            background-color: pink;
+        }
+
+h1{
+    text-align: center;
+   
+    font-weight: bolder;
+}
+
+
+p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+      
+}
+input{
+    text-align: center;
+    margin-left: 450px;
+    height: 70px;
+    border-radius: 20px;
+    font-size: 30px;
+    text-decoration: none;
+}
+button{
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+
+     </style>
+    </head>
+    <body>
+        <fieldset>
+
+   <div class="hours">
+         <h1>1.HOURS_TO_MINUTES</h1> 
+    <input type="number" name="hourstominuties" id="homi"><button onclick="hours()">Convert Minuties</button>
+       <P  id="mini"></P>
+    </P></div>
+      
+     <hr>
+<div class="min">
+       <h1>2.MINUTES_TO_HOURS</h1>
+<input type="number" name="minutestohour" id="miho"><button onclick="minit()">Convet Hour</button>
+    <P id="hour"></P> 
+</div>
+   <hr>
+
+      <div class="seco">
+       <h1>3.SEC_TO_HOURS</h1>
+       <input type="number" name="sectohours" id="seho"> <button onclick="mysec()">Convert Hour</button>
+    <P  id="seco"></P>
+    
+    </div>
+    <hr>
+
+
+    <div class="to">
+       <h1>4.HOURS_TO_SEC</h1>
+       <input type="number" name="hourstosec" id="hose"><button onclick="t()">Convert Sec</button>
+     <P  id="to"></P>
+    </div>
+    <hr>
+
+<div>
+       <h1>5.DAY_TO_YEAR</h1>
+       <input type="number" name="daytoyear" id="daye"><button onclick="day()">Convert Year</button>
+      <P id="dayye"></P></div>
+      <hr>
+
+
+      <div>
+       <h1>6.YEAR_TO_DAY</h1>
+       <input type="number" name="yeartoday" id="yeada"><button onclick=" year()">Convert Day</button>
+       <p id="yearda"></P></div>
+       <hr>
+
+
+       <div>
+        
+       <h1>7.MONTH_TO_DAYS</h1>
+       <input type="number" name="monthtoday" id="moda"><button onclick="monda()">Convert Day</button>
+      <P id="monday"></p>
+    </div>
+    <hr>
+
+    <div>
+       <h1>8.DAYS_TO_MONTH</h1>  
+       <input type="number" name="daystomonth" id="daymo"><button onclick="daytomonth()"> Convert Month</button> 
+       <P id="daymon"></P></div>
+       <hr>
+
+       <div>
+       <h1>9.MONTH_TO_YEARS</h1>
+       <input type="number" name="monthtoyear" id="monyear"><button onclick="monthyear()">Convert Year</button>
+     <P  id="monye"></P></div>
+     <hr>
+
+     <div>
+       <h1>10.YEARS_TO_MONTH</h1>
+       <input type="number" name="yeartomonth" id="yeamon"><button onclick="yearmonth()">Convert Month</button>
+        <P id="yemon"></P></div>
+    </fieldset>
+
+       <script>
+       
+   function hours(){
+    let a=Number(document.getElementById("homi").value);
+let b=a*60;
+    document.getElementById("mini").innerHTML=b+" "+'minutes.';
+
+   }
+   function minit(){
+    let a=Number(document.getElementById("miho").value);
+    let b=a/60;
+    document.getElementById("hour").innerHTML=b+"  "+'hours.';
+   }
+   function mysec(){
+    let a=Number(document.getElementById("seho").value);
+    let b=a/(60*60);
+    document.getElementById("seco").innerHTML= b+"  "+'hours.';
+   }
+   function t(){
+    let a=Number(document.getElementById("hose").value);
+    let b=a*60*60;
+    document.getElementById("to").innerHTML=b+" "+'sec.'
+   }
+function day(){
+    let a=Number(document.getElementById("daye").value);
+    let b=a/365.25;
+    document.getElementById("dayye").innerHTML=b+"  "+'year';
+}
+function year(){
+    let a=Number(document.getElementById("yeada").value);
+    let b=a/365.25;
+    document.getElementById("yearda").innerHTML=b+" "+'day';
+}
+function monda(){
+    let a=Number(document.getElementById("moda").value);
+    let b=a*30.4375;
+    document.getElementById("monday").innerHTML=b+" "+'days';
+    
+}
+function daytomonth(){
+    let a=Number(document.getElementById("daymo").value);
+    let b=a/30;
+    document.getElementById("daymon").innerHTML=b+"  "+'months'
+}
+function monthyear(){
+            let a=Number(document.getElementById("monyear").value);
+            let b= a/12;
+            document.getElementById("monye").innerHTML=b+"  "+'year';
+        }
+function yearmonth(){
+    let a=Number(document.getElementById("yeamon").value);
+    let b=a*12;
+    document.getElementById("yemon").innerHTML=b+"  "+'month';
+}
+
+       </script>
+    </body>
+</html>

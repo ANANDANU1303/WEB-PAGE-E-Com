@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <style>
+            body{ width: 100%;
+                background-image: url(https://www.stcolumbas.edu.in/slider/Slider_08.jpg);
+                background-repeat: no-repeat;
+            }
+            .box{
+                background-color: rgb(83, 228, 238);
+                color: white;
+                box-shadow:-10px 10px 5px 7px rgb(52, 74, 78);
+                width: 500px;
+                height: 400px;
+                position: relative;
+                margin: 100px;
+                margin-left: 400px;
+                padding: 10px;
+                border-radius: 10px;
+            }
+            div h1{
+                text-align: center;
+                background-color: rgb(10, 10, 158);
+                padding: 10px;
+            }
+            ol li{ 
+                color: rgb(46, 12, 18);
+                font-size: 20px;
+            }
+            button{
+                background-color: rgb(1, 1, 34);
+                color: white;
+                padding: 20px;
+                text-align: center;
+                border-radius: 10px;
+
+            }
+            
+            #total{
+                width: 100px;
+                border-radius: 10px;
+                background-color: black;
+                text-align: center;
+                font-size: 30px;
+                margin-left: 150px;
+            }
+            #total:hover{
+                background-color: pink;
+                color: red;
+            }
+            h3{
+                color: blueviolet;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <h1>GOVT. SCHOOL</h1>
+            <ol>
+                <h3>List of Govt.school spend money.</h3>
+                <li>Spend on computers: <b><u> $ 14589.</u></b></li>
+                <li> Spend on tables: <b><u> $ 1234. </u></b></li>
+                <li> Spend on chairs: <b><u> $ 876. </u></b></li>
+                
+            </ol>
+<p id="total"> </p> <button onclick="myf()"> TOTAL MONEY SPENDED</button><br>
+        </div>
+        <Script>
+            function myf(){
+                let a=14589;
+                let b=1234;
+                let c=876;
+                document.getElementById("total").innerHTML="$"+" "+(a+b+c);
+            }
+        </Script>
+    </body>
+</html>

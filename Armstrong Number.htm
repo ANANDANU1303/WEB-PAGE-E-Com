@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Armstrong Number</title>
+<style>
+h1{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+}
+body{ margin: 0;
+    padding: 10px;
+    background: url('https://wallpapercave.com/wp/wp1844033.jpg');
+    background-repeat: no-repeat;
+}
+.results {
+    color: white;
+    background-color : rgb(27, 1, 32);
+    text-align : center;
+    padding-left : 20px;
+    height : 500px;
+    width : 500px;
+    box-shadow: 0px 10px 8px 5px rgb(44, 42, 42);
+    margin-top: 50px;
+    margin-left: 400px;
+}
+label{
+    font-size: 20px;
+    font-weight: bold;
+}
+input{
+    padding: 10px;
+    font-weight: bold;
+    font-size: 17px;
+    background-color: rgb(247, 196, 204);
+}
+button{
+    display: block;
+    background-color: rgb(34, 1, 1);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+</head>
+<body>
+  
+    <div class = "results">
+        <h1><u>Armstrong Number</u></h1>
+      <label for="number">ENTER THE NUMBER</label>
+        <input type = "number" name = "number" required id = "number">
+        <br><br>
+        <button type = "button" onclick = "checkArmstrong()" > Check </button>
+     
+            <p id = "answer"> </p>
+     
+    </div>
+</div>
+<script>
+function checkArmstrong(){
+num = document.getElementById("number").value;
+var Number = num;
+var digits = 0;
+
+while(num > 0){
+digits = digits + 1;
+num = parseInt(num/10);
+}
+num = Number;
+var sum = 0;
+
+var i;
+for (i = 0; i<digits; i++ ) {
+var digit = num%10;
+sum = sum + Math.pow(digit, digits);
+num = parseInt(num/10);
+}
+if(sum == Number){
+document.getElementById("answer").style.color = "green";
+document.getElementById("answer").innerHTML = "The number " + Number + " is Armstrong Number";
+}else{
+document.getElementById("answer").style.color = "red";
+document.getElementById("answer").innerHTML = "The number " + Number + " is NOT Armstrong Number";
+}
+}
+</script>
+</body>
+</html>

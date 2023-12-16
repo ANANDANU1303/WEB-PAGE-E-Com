@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count The User Inputs</title>
+    <style>
+        #counter {
+            font-size: 18px;
+        }
+        .Page-header{
+            background: rgb(50, 146, 255);
+            width: 100%;
+            height: 70px;
+        }
+        body{
+            text-align: center;
+            background: lightblue;
+            
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="Page-header">
+    <h1 id="header">Count The User Inputs</h1>
+    </div>
+    <h2>Word and Character Counter</h2>
+    <textarea id="inputText" rows="30" cols="100" oninput="countWordsAndCharacters()"></textarea>
+    <div id="counter">
+        Words: <span id="wordCount">0</span> | Characters: <span id="charCount">0</span>
+    </div>
+
+    <script>
+        function countWordsAndCharacters() {
+            const inputText = document.getElementById("inputText").value;
+            const words = inputText.trim().split(/\s+/);
+            const characters = inputText.length;
+
+            document.getElementById("wordCount").textContent = words.length;
+            document.getElementById("charCount").textContent = characters;
+        }
+        countWordsAndCharacters();
+    </script>
+</body>
+</html>
